@@ -1,0 +1,13 @@
+kivy
+mysql-connector-python
+opencv-python
+numpy
+face-recognition
+imutils
+SpeechRecognition
+pymysql
+pyttsx3
+librosa
+tensorflow
+scikit-learn
+kivymd
