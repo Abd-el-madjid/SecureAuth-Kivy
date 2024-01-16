@@ -48,10 +48,10 @@ bg_noise_dir = "C:/Users/abdel/background_noise"
 
 
 user_directories = {
-
-    'madjid': 'C:/Users/abdel/voice_samples/madjid',
-    'lechhub': 'C:/Users/abdel/voice_samples/lechhub',
-    'prof_ar': 'C:/Users/abdel/voice_samples/prof ar',
+    # Update the following directories with your actual voice directories  
+    'pers 1': 'C:/Users/abdel/voice_samples/p1',
+    'pers 2': 'C:/Users/abdel/voice_samples/p2',
+    'pers 3': 'C:/Users/abdel/voice_samples/p3',
 }
 
 
