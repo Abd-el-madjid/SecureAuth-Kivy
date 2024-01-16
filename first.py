@@ -166,13 +166,14 @@ class SECURERoomApp(MDApp):
                  face_encoding = max(face_encodings, key=lambda encoding: face_recognition.face_distance([encoding], encoding)[0])
 
                  connection = pymysql.connect(
-                        host="localhost", user="root", password="04122002", database="face_recognition")
+                        host="localhost", user="root", password="put here your password", database="face_recognition")
                  cursor = connection.cursor()
                  cursor.execute("SELECT name, username FROM users")
                  users = cursor.fetchall()
                  connection.close()
 
-                 encodings_directory = "C:\\Users\\abdel\\OneDrive\\Bureau\\my_kivy_project\\encodings"
+                 encodings_directory = "my_kivy_project\\encodings"
+                # this local is the one where you save your faceencodings format   you can check opencv to know how to make photo for your face like that in the needded format
 
          # Compare the user's face with the stored encodings
                  face_authenticated = False
@@ -248,7 +249,8 @@ class SECURERoomApp(MDApp):
     
     
     def start_voice_authentification(self):
-            bg_noise_dir = "C:/Users/abdel/background_noise"
+        # this  bg_noise_dir  is some noice voicec  so the model train  more perfectly you can add some noises as you needed and you can check kaggle   to more dataset
+            bg_noise_dir = "background_noise"
             login_attempts = 0
             voice_authenticated=False
             while login_attempts < 3:
@@ -260,7 +262,7 @@ class SECURERoomApp(MDApp):
                   print(f"user{is_authenticated} loged in ")
                   # Get the expected_phrase from the database
                   connection = pymysql.connect(
-                       host="localhost", user="root", password="04122002", database="face_recognition")
+                      host="localhost", user="root", password="put here your password", database="face_recognition")
                   cursor = connection.cursor()
                   cursor.execute("SELECT text_require FROM users WHERE username = %s", (is_authenticated))
                   result = cursor.fetchone()
@@ -303,6 +305,8 @@ class SECURERoomApp(MDApp):
         print("finger")
         login_attempts = 0
         path_f_chosen = "C:/Users/abdel/Downloads/SOCOFing/Altered/Altered-Hard/76__F_Right_thumb_finger_Obl.BMP"
+        # this is the finger print pic that i chose to compare to the data and check if existe note that this pic is half erased to similate the finger scanner 
+        # , also note that you can fet the fingers print data from kaggle chack read me to see the link  
 
         
 
@@ -331,7 +335,7 @@ class SECURERoomApp(MDApp):
           nonlocal login_attempts
            
           while login_attempts < 3:  
-            connection = pymysql.connect(host="localhost", user="root", password="04122002", database="face_recognition")
+            connection = pymysql.connect(host="localhost", user="root", password="put here your password", database="face_recognition")
             cursor = connection.cursor()
             cursor.execute("SELECT finger_print FROM users")
             result = cursor.fetchall()
@@ -345,7 +349,7 @@ class SECURERoomApp(MDApp):
                  self.root.current = 'home' 
                       # Save the login time in the database
                  connection = pymysql.connect(
-                             host="localhost", user="root", password="04122002", database="face_recognition")
+                     host="localhost", user="root", password="put here your password", database="face_recognition")
                  cursor = connection.cursor()
                  sql = "UPDATE users SET last_login=%s WHERE finger_print=%s"
                  cursor.execute(
