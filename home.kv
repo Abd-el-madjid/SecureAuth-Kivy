@@ -1,0 +1,61 @@
+MDScreen:
+    name:"home"
+    MDFloatLayout:
+        id:"home_layout"
+        md_bg_color:1,1,1,1
+        
+        Image:
+            source:"C:/Users/abdel/OneDrive/Bureau/atelier/atelier image/atelier img/image-removebg-preview (1).png"
+            pos_hint:{"left": 0, "top": 1.34}
+            size_hint_x: 0.3
+            size_hint_y: 0.8
+          
+            allow_stretch: True
+            keep_ratio: True
+        Image:
+            source:"C:/Users/abdel/OneDrive/Bureau/atelier/atelier image/atelier img/undraw_Code_thinking_re_gka2.png"
+            pos_hint:{"left": 0, "top": 0.9}
+            size_hint_x: 1
+            size_hint_y: 0.6
+            allow_stretch: True
+            keep_ratio: True
+
+        MDLabel:
+            text: " W E L L C O M"
+            font_name:"BPoppons"  
+            font_size:"23sp"
+            pos_hint:{"center_x": .5, "center_y": .3}
+            halign : "center"
+            color: rgba(34,34,34,255)     
+        MDLabel:
+            text: "   your juste made it by entiring the secure room  "
+            font_name:"MPoppons"  
+            font_size:"13sp"
+            pos_hint:{"center_x": .5, "center_y": .25}
+            halign : "center"
+            color: rgba(127,127,127,255) 
+        Button:
+            text:"Sign out"
+            size_hint:.66,.065
+            background_color:0,0,0,0
+            font_name:"BPoppons"
+            pos_hint:{"center_x": .5, "center_y": .15}
+            on_release:
+                root.manager.transition.direction ="right"
+                root.manager.current = "main"
+            canvas.before:
+                Color:
+                    rgb: rgba(70,128,127,255)
+                RoundedRectangle:
+                    size:self.size
+                    pos:self.pos
+                    radius:[5]
+
+
+
+
+
+
+
+
+
